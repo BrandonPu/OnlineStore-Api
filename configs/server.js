@@ -8,8 +8,10 @@ import { dbConnection } from './mongo.js';
 import limiter from "../src/middlewares/validar-cant-peticiones.js";
 import authRoutes from "../src/auth/auth.routes.js";
 import userRoutes from "../src/users/user.routes.js";
+import categoryRoutes from "../src/categories/categories.routes.js";
 import { createDefaultRoles } from '../src/role/role.controller.js';
 import { createAdminUser } from '../src/auth/auth.controller.js';
+import { createCategoryDefault } from '../src/categories/categories.controller.js';
 
 
 const middlewares = (app) => {
@@ -25,6 +27,7 @@ const routes = (app) => {
 
     app.use("/onlineStorePu/v1/auth", authRoutes);
     app.use("/onlineStorePu/v1/user", userRoutes);
+    app.use("/onlineStorePu/v1/category", categoryRoutes);
 
 }
 
@@ -47,6 +50,7 @@ export const initServer = async() => {
         await conectarDB();
         await createDefaultRoles();
         await createAdminUser();
+        await createCategoryDefault();
         routes(app);
         app.listen(port);
         console.log(`Server running on port: ${port}`);
