@@ -3,8 +3,11 @@ import Category from "../categories/categories.model.js";
 
 export const getProducts = async (req, res) => {
     try {
-        const products = await Product.find().populate('category');
+        const products = await Product.find({ state: true }).populate('category');
 
+        if (products.length === 0) {
+            return res.status(404).json({ message: 'No hay productos disponibles' });
+        }
         res.status(200).json(products);
     } catch (error) {
         console.error(error);
@@ -16,9 +19,10 @@ export const getProducts = async (req, res) => {
 
 export const getProductsById = async (req, res) => {
     try {
-        const product = await Product.findById(req.params.id).populate('category');
+        const product = await Product.findOne({ _id: req.params.id, state: true }).populate('category');
+        
         if (!product) {
-            return res.status(404).json({ message: 'Producto no encontrado' });
+            return res.status(404).json({ message: 'Producto no encontrado o desactivado' });
         }
 
         res.status(200).json(product);
@@ -29,6 +33,24 @@ export const getProductsById = async (req, res) => {
         });
     }
 }
+
+export const getProductsInactive = async (req, res) => {
+    try {
+        const inactiveProducts = await Product.find({ state: false }).populate('category');
+
+        if (inactiveProducts.length === 0) {
+            return res.status(404).json({ message: 'No hay productos desactivados' });
+        }
+
+        res.status(200).json(inactiveProducts);
+    } catch (error) {
+        console.error(error);
+        return res.status(500).json({
+            msg: 'Error al obtener los productos desactivados',
+            error: error.message,
+        });
+    }
+};
 
 export const createProduct = async (req, res) => {
     try {
@@ -146,3 +168,45 @@ export const deleteProduct = async (req, res) => {
         });
     }
 };
+
+export const getOutOfStockProducts = async (req, res) => {
+    try {
+      const outOfStockProducts = await Product.find({ stock: 0 });
+  
+      if (outOfStockProducts.length === 0) {
+        return res.status(404).json({
+          message: "No hay productos agotados",
+        });
+      }
+  
+      res.json(outOfStockProducts);
+
+    } catch (error) {
+      res.status(500).json({
+        message: "Error al obtener productos agotados",
+        error: error.message,
+      });
+    }
+  };
+
+  export const getTopSellingProducts = async (req, res) => {
+    try {
+      const topSellingProducts = await Product.find()
+        .sort({ sold: -1 }) 
+        .limit(10);
+  
+      if (topSellingProducts.length === 0) {
+        return res.status(404).json({
+          message: "No hay productos vendidos",
+        });
+      }
+  
+      res.json(topSellingProducts);
+    } catch (error) {
+      res.status(500).json({
+        message: "Error al obtener los productos más vendidos",
+        error: error.message,
+      });
+    }
+  };
+  
