@@ -29,6 +29,7 @@ export const getProductsCategoy = async (req, res) => {
             }
 
             productsByCategory[product.category.name].push({
+                id: product.id,
                 name: product.name,
                 description: product.description,
                 price: product.price,
@@ -75,6 +76,7 @@ export const getTopSellingProducts = async (req, res) => {
         }
 
         const simplifiedProducts = topSellingProducts.map(product => ({
+            id: product.id,
             name: product.name,
             description: product.description,
             price: product.price,
