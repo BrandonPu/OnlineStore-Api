@@ -10,6 +10,7 @@ import authRoutes from "../src/auth/auth.routes.js";
 import userRoutes from "../src/users/user.routes.js";
 import categoryRoutes from "../src/categories/categories.routes.js";
 import productRoutes from "../src/products/product.routes.js";
+import clientRoutes from "../src/clients/clients.routes.js";
 import { createDefaultRoles } from '../src/role/role.controller.js';
 import { createAdminUser } from '../src/auth/auth.controller.js';
 import { createCategoryDefault } from '../src/categories/categories.controller.js';
@@ -30,6 +31,7 @@ const routes = (app) => {
     app.use("/onlineStorePu/v1/user", userRoutes);
     app.use("/onlineStorePu/v1/category", categoryRoutes);
     app.use("/onlineStorePu/v1/product", productRoutes);
+    app.use("/onlineStorePu/v1/client", clientRoutes);
 
 }
 
