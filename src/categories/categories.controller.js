@@ -1,4 +1,5 @@
 import Category from "./categories.model.js";
+import Product from "../products/product.model.js";
 
 export const getCategories = async (req, res) => {
     try {
@@ -78,20 +79,32 @@ export const deleteCategory = async (req, res) => {
             return res.status(404).json({ message: "Categoría no encontrada" });
         }
 
+        let defaultCategory = await Category.findOne({ name: "General" });
+
+        if (!defaultCategory) {
+            defaultCategory = new Category({
+                name: "General",
+                description: "Categoría general para los productos",
+            });
+            await defaultCategory.save();
+        }
+
+        await Product.updateMany({ category: id }, { category: defaultCategory._id });
+
         category.state = false;
-        await category.save();  
+        await category.save();
 
         res.status(200).json({
             success: true,
-            msg: "Categoría desactivada correctamente", 
-            category
+            msg: "Categoría desactivada correctamente y productos reasignados.",
+            category,
         });
-
+        
     } catch (error) {
         res.status(500).json({
             success: false,
             msg: "Error al desactivar la categoría",
-            error: error.message
+            error: error.message,
         });
     }
 };
