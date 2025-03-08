@@ -1,5 +1,6 @@
 import Cart from "./cart.model.js";
 import Product from "../products/product.model.js";
+import User from "../users/user.model.js";
 
 export const addProductToCart = async (req, res) => {
     const { _id: userId } = req.usuario;
@@ -28,6 +29,16 @@ export const addProductToCart = async (req, res) => {
 
         await product.save();
         await cart.save();
+
+        // Actualizar el campo 'cart' en el modelo 'User'
+        const user = await User.findById(userId);
+        if (!user) return res.status(404).json({ msg: "Usuario no encontrado" });
+
+        // Si el carrito no está ya en la lista de carritos del usuario, lo agregamos
+        if (!user.cart.includes(cart._id)) {
+            user.cart.push(cart._id);
+            await user.save();
+        }
 
         res.status(200).json({ msg: "Producto agregado al carrito", cart });
     } catch (error) {
