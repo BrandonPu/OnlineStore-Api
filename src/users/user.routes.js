@@ -1,10 +1,15 @@
 import { Router } from "express";
-import { getClients,createUser, updateUser, deleteUser } from "./user.controller.js";
+import { deleteUserAccount,updateUserProfile, getClients,createUser, updateUser, deleteUser } from "./user.controller.js";
 import { validarCampos } from "../middlewares/validar-campos.js";
+import { validarJWT } from "../middlewares/validar-jwt.js";
 import { validarJWTADMIN } from "../middlewares/validar-jwt-admin.js";
 import { validarConfirmacion } from "../middlewares/validar-confirmacion.js";
 
 const router = Router();
+
+router.put('/profile/:id', validarJWT, updateUserProfile);
+
+router.put("/deleteProfile/:id", validarJWT, deleteUserAccount);
 
 router.get(
     "/",

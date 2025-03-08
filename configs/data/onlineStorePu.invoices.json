@@ -1,0 +1,58 @@
+[{
+  "_id": {
+    "$oid": "67cbc94ab7702190433d0150"
+  },
+  "user": {
+    "$oid": "67c928369d41935d98484cfa"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "67ca724c7f6e372b38889afe"
+      },
+      "quantity": -500,
+      "_id": {
+        "$oid": "67cbd20c4b2260f459857deb"
+      }
+    }
+  ],
+  "total": 299.84999999999997,
+  "status": "PAID",
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-08T04:36:26.516Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-08T05:13:48.280Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cbcb841d14e39f70126327"
+  },
+  "user": {
+    "$oid": "67ca42ab542ba2f9e4177729"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "67ca72677f6e372b38889b05"
+      },
+      "quantity": 5,
+      "price": 99.99,
+      "subtotal": 499.95,
+      "_id": {
+        "$oid": "67cbcb841d14e39f70126328"
+      }
+    }
+  ],
+  "total": 499.95,
+  "status": "PAID",
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-08T04:45:56.248Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-08T04:45:56.248Z"
+  }
+}]

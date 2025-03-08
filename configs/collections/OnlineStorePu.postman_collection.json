@@ -1,0 +1,1169 @@
+{
+	"info": {
+		"_postman_id": "661236bc-0494-4085-bc8f-fed1787254be",
+		"name": "OnlineStorePu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37413624"
+	},
+	"item": [
+		{
+			"name": "ADMIN",
+			"item": [
+				{
+					"name": "Users",
+					"item": [
+						{
+							"name": "NewUser",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MmJkMWYwMDYyMzM4MGVjMDgwODIiLCJpYXQiOjE3NDEzMDg0MTgsImV4cCI6MTc0MTMxNTYxOH0.etyttXnXC_PnM057x821BfgSwbI3b9D_kKX_RXVIrOY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Prueba\",\r\n    \"surname\": \"Prueba\",\r\n    \"username\": \"Prueba\",\r\n    \"email\": \"prueba@gmail.com\",\r\n    \"password\": \"12345678\",\r\n    \"role\": \"ADMIN_ROLE\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/user/createUser",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"user",
+										"createUser"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateUser",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MmJkMWYwMDYyMzM4MGVjMDgwODIiLCJpYXQiOjE3NDEzMDg0MTgsImV4cCI6MTc0MTMxNTYxOH0.etyttXnXC_PnM057x821BfgSwbI3b9D_kKX_RXVIrOY",
+										"type": "text"
+									},
+									{
+										"key": "confirmacion",
+										"value": "yes",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Marlon\",\r\n    \"surname\": \"Casia\",\r\n    \"username\": \"mcasia\",\r\n    \"role\": \"ADMIN_ROLE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/user/67ca42ab542ba2f9e4177729",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"user",
+										"67ca42ab542ba2f9e4177729"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteUser",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MmJkMWYwMDYyMzM4MGVjMDgwODIiLCJpYXQiOjE3NDEzMDg0MTgsImV4cCI6MTc0MTMxNTYxOH0.etyttXnXC_PnM057x821BfgSwbI3b9D_kKX_RXVIrOY",
+										"type": "text"
+									},
+									{
+										"key": "confirmacion",
+										"value": "yes",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/user/67ca42ab542ba2f9e4177729",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"user",
+										"67ca42ab542ba2f9e4177729"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetClients",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MmJkMWYwMDYyMzM4MGVjMDgwODIiLCJpYXQiOjE3NDEzMDg3MTIsImV4cCI6MTc0MTMxNTkxMn0.5s6DM9o6A0cq1_I8uOCVDUeBVnBjRKuoHtxsdtxzLKc",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/user/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"user",
+										""
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Categories",
+					"item": [
+						{
+							"name": "NewCategory",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MmJkMWYwMDYyMzM4MGVjMDgwODIiLCJpYXQiOjE3NDEzMDg0MTgsImV4cCI6MTc0MTMxNTYxOH0.etyttXnXC_PnM057x821BfgSwbI3b9D_kKX_RXVIrOY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Deportes\",\r\n    \"description\": \"Para todos lo deportes en general\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/category/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"category",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetCategories",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MmJkMWYwMDYyMzM4MGVjMDgwODIiLCJpYXQiOjE3NDEzNTQ3NTMsImV4cCI6MTc0MTM2MTk1M30.-B-ivWcLZWpy3lI8_onsWvBAdSRYkcOaXtpY4rHH7zI",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/category/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"category",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteCategory",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MmJkMWYwMDYyMzM4MGVjMDgwODIiLCJpYXQiOjE3NDEzNTQ3NTMsImV4cCI6MTc0MTM2MTk1M30.-B-ivWcLZWpy3lI8_onsWvBAdSRYkcOaXtpY4rHH7zI",
+										"type": "text"
+									},
+									{
+										"key": "confirmacion",
+										"value": "yes",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/category/67ca4c23f3a3e86025333633",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"category",
+										"67ca4c23f3a3e86025333633"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateCategory",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MmJkMWYwMDYyMzM4MGVjMDgwODIiLCJpYXQiOjE3NDEzMDg0MTgsImV4cCI6MTc0MTMxNTYxOH0.etyttXnXC_PnM057x821BfgSwbI3b9D_kKX_RXVIrOY",
+										"type": "text"
+									},
+									{
+										"key": "confirmacion",
+										"value": "yes",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"name\": \"Nueva Categoría\",\r\n  \"description\": \"Descripción actualizada de la categoría.\",\r\n  \"state\": \"true\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/category/67ca4f0d3acd8b9e950ae10e",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"category",
+										"67ca4f0d3acd8b9e950ae10e"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "NewProduct",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MmJkMWYwMDYyMzM4MGVjMDgwODIiLCJpYXQiOjE3NDEzMTYwOTEsImV4cCI6MTc0MTMyMzI5MX0.F15G8zXsFHXSmR_LyizoLNLmePG_e9r37KRf2chiORo",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Ropa\",\r\n    \"description\": \"Este es un producto de Ropa para la prueba.\",\r\n    \"price\": 999.99,\r\n    \"stock\": 100,\r\n    \"category\": \"67ca5b0c2ff3a88f387e6b7e\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/product/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"product",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetProducts",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MmJkMWYwMDYyMzM4MGVjMDgwODIiLCJpYXQiOjE3NDEzNTMwMjIsImV4cCI6MTc0MTM2MDIyMn0.XY7WYAUSLeYuTBtZrNHI-k2PSg-O9FZgV9LPZ2J0uFk",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/product/",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"product",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetProductsInactive",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MmJkMWYwMDYyMzM4MGVjMDgwODIiLCJpYXQiOjE3NDEzNTMwMjIsImV4cCI6MTc0MTM2MDIyMn0.XY7WYAUSLeYuTBtZrNHI-k2PSg-O9FZgV9LPZ2J0uFk",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/product/Product/Inactive",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"product",
+										"Product",
+										"Inactive"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetProductById",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MmJkMWYwMDYyMzM4MGVjMDgwODIiLCJpYXQiOjE3NDEzNTMwMjIsImV4cCI6MTc0MTM2MDIyMn0.XY7WYAUSLeYuTBtZrNHI-k2PSg-O9FZgV9LPZ2J0uFk",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/product/67ca724c7f6e372b38889afe",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"product",
+										"67ca724c7f6e372b38889afe"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetProductsOfStock",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MmJkMWYwMDYyMzM4MGVjMDgwODIiLCJpYXQiOjE3NDEzNTMwMjIsImV4cCI6MTc0MTM2MDIyMn0.XY7WYAUSLeYuTBtZrNHI-k2PSg-O9FZgV9LPZ2J0uFk",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/product/get/stock",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"product",
+										"get",
+										"stock"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetProductSelling",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MmJkMWYwMDYyMzM4MGVjMDgwODIiLCJpYXQiOjE3NDEzNTMwMjIsImV4cCI6MTc0MTM2MDIyMn0.XY7WYAUSLeYuTBtZrNHI-k2PSg-O9FZgV9LPZ2J0uFk",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/product/top/selling",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"product",
+										"top",
+										"selling"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "UpdateProduct",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MmJkMWYwMDYyMzM4MGVjMDgwODIiLCJpYXQiOjE3NDEzNTMwMjIsImV4cCI6MTc0MTM2MDIyMn0.XY7WYAUSLeYuTBtZrNHI-k2PSg-O9FZgV9LPZ2J0uFk",
+										"type": "text"
+									},
+									{
+										"key": "confirmacion",
+										"value": "yes",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Hojas\",\r\n    \"description\": \"Este es un producto de Hojas para la prueba.\",\r\n    \"price\": 19.99,\r\n    \"stock\": 9,\r\n    \"category\": \"67ca4c23f3a3e86025333633\",\r\n    \"sold\": \"80\",\r\n    \"state\": true\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/product/67ca727e7f6e372b38889b0a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"product",
+										"67ca727e7f6e372b38889b0a"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteProduct",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MmJkMWYwMDYyMzM4MGVjMDgwODIiLCJpYXQiOjE3NDEzMTYwOTEsImV4cCI6MTc0MTMyMzI5MX0.F15G8zXsFHXSmR_LyizoLNLmePG_e9r37KRf2chiORo",
+										"type": "text"
+									},
+									{
+										"key": "confirmacion",
+										"value": "yes",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/product/67ca727e7f6e372b38889b0a",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"product",
+										"67ca727e7f6e372b38889b0a"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "INVOICEADMIN",
+					"item": [
+						{
+							"name": "GetInvoicesByUser",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MjgzNjlkNDE5MzVkOTg0ODRjZmEiLCJpYXQiOjE3NDE0MDk3NTgsImV4cCI6MTc0MTQxNjk1OH0.ghZ1SZnGB8JNuKfr5xbzSgk0uG6Ksr8GR4DLdRjxt5M",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/invoice/user/invoices",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"invoice",
+										"user",
+										"invoices"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetInvoiceDetails",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MjgzNjlkNDE5MzVkOTg0ODRjZmEiLCJpYXQiOjE3NDE0MTAwOTAsImV4cCI6MTc0MTQxNzI5MH0.ge6GRIyR_C8dhnWNpaF-B5s2r4E_kVNBTv_4iEZzY1A",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/invoice/67cbc94ab7702190433d0150",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"invoice",
+										"67cbc94ab7702190433d0150"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "EditInvoice",
+							"request": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MmJkMWYwMDYyMzM4MGVjMDgwODIiLCJpYXQiOjE3NDE0MTAyNDIsImV4cCI6MTc0MTQxNzQ0Mn0.bm85ZCRzlrq3pOS32mMQ3jAF5F5gfNvZaQsjHF_-O0Y",
+										"type": "text"
+									},
+									{
+										"key": "confirmacion",
+										"value": "yes",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n  \"items\": [\r\n    {\r\n      \"product\": \"67ca724c7f6e372b38889afe\",  // ID del producto\r\n      \"quantity\": 2\r\n    }\r\n  ],\r\n  \"status\": \"PAID\"\r\n}\r\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/invoice/67cbc94ab7702190433d0150",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"invoice",
+										"67cbc94ab7702190433d0150"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "LoginAdmin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"admin@system.com\",\r\n    \"password\": \"admin2025\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/onlineStorePu/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"onlineStorePu",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "ProductosMásVendidos",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MjgzNjlkNDE5MzVkOTg0ODRjZmEiLCJpYXQiOjE3NDEzNTY3OTMsImV4cCI6MTc0MTM2Mzk5M30.3eMo0Bb-a7uaMsajaAVgvc2P2O7fSe6MANhj-clLEoI",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/client/top/selling",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"client",
+										"top",
+										"selling"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ProductsHome",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MjgzNjlkNDE5MzVkOTg0ODRjZmEiLCJpYXQiOjE3NDE0MDM3NTIsImV4cCI6MTc0MTQxMDk1Mn0.VXBDPVRZKrFWh8QeMI905DzOqx0gywDJqacRMcDTk3Y",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/client/products/Home",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"client",
+										"products",
+										"Home"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "ProductsByName",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MjgzNjlkNDE5MzVkOTg0ODRjZmEiLCJpYXQiOjE3NDEzNTY3OTMsImV4cCI6MTc0MTM2Mzk5M30.3eMo0Bb-a7uaMsajaAVgvc2P2O7fSe6MANhj-clLEoI",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/client/search?name=hojas",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"client",
+										"search"
+									],
+									"query": [
+										{
+											"key": "name",
+											"value": "hojas"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Categories",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MjgzNjlkNDE5MzVkOTg0ODRjZmEiLCJpYXQiOjE3NDEzNTY3OTMsImV4cCI6MTc0MTM2Mzk5M30.3eMo0Bb-a7uaMsajaAVgvc2P2O7fSe6MANhj-clLEoI",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/client/categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"client",
+										"categories"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetProductByCategory",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MjgzNjlkNDE5MzVkOTg0ODRjZmEiLCJpYXQiOjE3NDEzNTY3OTMsImV4cCI6MTc0MTM2Mzk5M30.3eMo0Bb-a7uaMsajaAVgvc2P2O7fSe6MANhj-clLEoI",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/client/products/category/Alimentos",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"client",
+										"products",
+										"category",
+										"Alimentos"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Cart",
+					"item": [
+						{
+							"name": "AddProductCart",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MjgzNjlkNDE5MzVkOTg0ODRjZmEiLCJpYXQiOjE3NDE0MTEzNDEsImV4cCI6MTc0MTQxODU0MX0.HipIJhy-hwq9rfUEaKCFl0FJZYHl0P-bIs9_EUwBs2k",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"productId\": \"67ca72677f6e372b38889b05\",\r\n    \"quantity\": 5\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/cart/add-to-cart",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"cart",
+										"add-to-cart"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "PaidCart",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2NhNDJhYjU0MmJhMmY5ZTQxNzc3MjkiLCJpYXQiOjE3NDE0MDg4NzYsImV4cCI6MTc0MTQxNjA3Nn0.cgARXcTj3Epl4yJHAR965mGlTNK9uolpLP5sJEFg9wA",
+										"type": "text"
+									},
+									{
+										"key": "confirmacion",
+										"value": "yes",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/invoice/complete-purchase/67cbb93b98b7a2cc6ab4add2",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"invoice",
+										"complete-purchase",
+										"67cbb93b98b7a2cc6ab4add2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "INVOICE",
+					"item": [
+						{
+							"name": "GetInvoicesByUser",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MjgzNjlkNDE5MzVkOTg0ODRjZmEiLCJpYXQiOjE3NDE0MDk3NTgsImV4cCI6MTc0MTQxNjk1OH0.ghZ1SZnGB8JNuKfr5xbzSgk0uG6Ksr8GR4DLdRjxt5M",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/invoice/user/invoices",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"invoice",
+										"user",
+										"invoices"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "GetInvoiceDetails",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MjgzNjlkNDE5MzVkOTg0ODRjZmEiLCJpYXQiOjE3NDE0MTAwOTAsImV4cCI6MTc0MTQxNzI5MH0.ge6GRIyR_C8dhnWNpaF-B5s2r4E_kVNBTv_4iEZzY1A",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/invoice/67cbc94ab7702190433d0150",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"invoice",
+										"67cbc94ab7702190433d0150"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PurchaseHistory",
+					"item": [
+						{
+							"name": "History",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MjgzNjlkNDE5MzVkOTg0ODRjZmEiLCJpYXQiOjE3NDE0MTEzNjgsImV4cCI6MTc0MTQxODU2OH0.OjxIMiRSHrdFzd_dc8IG8i9_j1uMhEZfHce-qORNXq0",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/onlineStorePu/v1/invoice/history",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"onlineStorePu",
+										"v1",
+										"invoice",
+										"history"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Brandon\",\r\n    \"surname\": \"Pu\",\r\n    \"username\": \"brandonPu\",\r\n    \"email\": \"brandonPu@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/onlineStorePu/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"onlineStorePu",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"brandonPu@gmail.com\",\r\n    \"password\": \"12345678\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/onlineStorePu/v1/auth/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"onlineStorePu",
+								"v1",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "EditClient",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MjgzNjlkNDE5MzVkOTg0ODRjZmEiLCJpYXQiOjE3NDE0MTEzNjgsImV4cCI6MTc0MTQxODU2OH0.OjxIMiRSHrdFzd_dc8IG8i9_j1uMhEZfHce-qORNXq0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Nuevo nombre\",\r\n  \"surname\": \"Nuevo apellido\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/onlineStorePu/v1/user/profile/67c928369d41935d98484cfa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"onlineStorePu",
+								"v1",
+								"user",
+								"profile",
+								"67c928369d41935d98484cfa"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1aWQiOiI2N2M5MjgzNjlkNDE5MzVkOTg0ODRjZmEiLCJpYXQiOjE3NDE0MTEzNjgsImV4cCI6MTc0MTQxODU2OH0.OjxIMiRSHrdFzd_dc8IG8i9_j1uMhEZfHce-qORNXq0",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Nuevo nombre\",\r\n  \"surname\": \"Nuevo apellido\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/onlineStorePu/v1/user/deleteProfile/67c928369d41935d98484cfa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"onlineStorePu",
+								"v1",
+								"user",
+								"deleteProfile",
+								"67c928369d41935d98484cfa"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

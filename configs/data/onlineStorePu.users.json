@@ -1,0 +1,100 @@
+[{
+  "_id": {
+    "$oid": "67c928369d41935d98484cfa"
+  },
+  "name": "Nuevo nombre",
+  "surname": "Nuevo apellido",
+  "username": "brandonPu",
+  "email": "brandonPu@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$CQDwvM08ZFPgoucwktUg4Q$spxQBBAAOXZvLGw918jMbMsvJix3xtUfjNp/gYNqV3M",
+  "role": "CLIENT_ROLE",
+  "cart": [
+    {
+      "$oid": "67cbb67cffa10597f3653891"
+    },
+    {
+      "$oid": "67cbd41aa4934e8376603171"
+    },
+    {
+      "$oid": "67cbd4d06c3cce9b2ef3b62c"
+    },
+    {
+      "$oid": "67cbd500b4889e1e7eb80e0b"
+    },
+    {
+      "$oid": "67cbd50512372aa82a25ca87"
+    }
+  ],
+  "purchaseHistory": [],
+  "invoices": [
+    {
+      "$oid": "67cbc94ab7702190433d0150"
+    }
+  ],
+  "state": false,
+  "createdAt": {
+    "$date": "2025-03-06T04:44:38.856Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-08T05:39:31.706Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67c92bd1f00623380ec08082"
+  },
+  "name": "Admin",
+  "surname": "System",
+  "username": "AdminSystem",
+  "email": "admin@system.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$pXZCaa+3PV6fPXcuxeySHg$KGEnTC6tjZUsUfyHEFxIDH8icnnvxYRXceaBfAi79Mw",
+  "role": "ADMIN_ROLE",
+  "cart": [],
+  "purchaseHistory": [],
+  "invoices": [],
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-06T05:00:01.941Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-06T05:00:01.941Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ca42ab542ba2f9e4177729"
+  },
+  "name": "Marlon",
+  "surname": "Casia",
+  "username": "mcasia",
+  "email": "prueba@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$ozNvWRZHjZpLZQRBMznaXQ$7XsbXSbdPZFwHW3Y1kU518+VLGv9QF1fiaNy9VkcJM8",
+  "role": "CLIENT_ROLE",
+  "cart": [
+    {
+      "$oid": "67cbb93b98b7a2cc6ab4add2"
+    },
+    {
+      "$oid": "67cbd3e5a4934e837660315c"
+    },
+    {
+      "$oid": "67cbd3fca4934e8376603166"
+    }
+  ],
+  "purchaseHistory": [],
+  "invoices": [
+    {
+      "$oid": "67cbca81c54a38f5b0f14ccc"
+    },
+    {
+      "$oid": "67cbcb841d14e39f70126327"
+    }
+  ],
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-07T00:49:47.451Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-08T05:22:04.575Z"
+  }
+}]

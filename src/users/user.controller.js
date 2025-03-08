@@ -146,3 +146,93 @@ export const deleteUser = async (req, res) => {
         })
     }   
 }
+
+export const updateUserProfile = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { _id, email, password, role, ...data } = req.body;
+
+        if (req.usuario._id.toString() !== id) {
+            return res.status(403).json({
+                success: false,
+                msg: "No tienes permiso para actualizar este perfil."
+            });
+        }
+
+        if (email || password) {
+            return res.status(400).json({
+                success: false,
+                msg: "No puedes actualizar el email o la contraseña desde esta ruta."
+            });
+        }
+
+        const user = await User.findById(id);
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                msg: "Usuario no encontrado"
+            });
+        }
+
+        if (role && role !== user.role) {
+            return res.status(400).json({
+                success: false,
+                msg: "No puedes cambiar el rol de usuario."
+            });
+        }
+
+        Object.assign(user, data);
+
+        await user.save();
+
+        res.status(200).json({
+            success: true,
+            msg: "Usuario actualizado correctamente",
+            user
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            msg: "Error al actualizar el usuario",
+            error: error.message
+        });
+    }
+};
+
+export const deleteUserAccount = async (req, res) => {
+    const { _id: userId } = req.usuario;  
+    try {
+        if (userId !== req.params.id) {
+            return res.status(403).json({
+                success: false,
+                msg: "No tienes permiso para eliminar esta cuenta."
+            });
+        }
+
+        const user = await User.findById(userId);
+        if (!user) {
+            return res.status(404).json({
+                success: false,
+                msg: "Usuario no encontrado"
+            });
+        }
+
+        user.state = false;
+
+        await user.save();
+
+        res.status(200).json({
+            success: true,
+            msg: "Cuenta eliminada correctamente. Usuario desactivado.",
+            user
+        });
+
+    } catch (error) {
+        res.status(500).json({
+            success: false,
+            msg: "Error al eliminar la cuenta",
+            error: error.message
+        });
+    }
+};

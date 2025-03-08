@@ -1,0 +1,60 @@
+[{
+  "_id": {
+    "$oid": "67ca724c7f6e372b38889afe"
+  },
+  "name": "Hojas",
+  "description": "Este es un producto de Hojas para la prueba.",
+  "price": 19.99,
+  "stock": 20,
+  "category": {
+    "$oid": "67ca5b0c2ff3a88f387e6b7e"
+  },
+  "sold": 0,
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-07T04:13:00.507Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-08T05:13:48.276Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ca72677f6e372b38889b05"
+  },
+  "name": "Carton",
+  "description": "Este es un producto de Carton para la prueba.",
+  "price": 99.99,
+  "stock": 15,
+  "category": {
+    "$oid": "67ca5b0c2ff3a88f387e6b7e"
+  },
+  "sold": 120,
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-07T04:13:27.278Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-08T05:26:29.449Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67ca727e7f6e372b38889b0a"
+  },
+  "name": "Hojas",
+  "description": "Este es un producto de Hojas para la prueba.",
+  "price": 19.99,
+  "stock": 20,
+  "category": {
+    "$oid": "67ca4c23f3a3e86025333633"
+  },
+  "sold": 80,
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-07T04:13:50.070Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-08T02:37:48.954Z"
+  }
+}]
