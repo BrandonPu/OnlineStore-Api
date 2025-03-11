@@ -7,9 +7,9 @@ import { validarConfirmacion } from "../middlewares/validar-confirmacion.js";
 
 const router = Router();
 
-router.put('/profile/:id', validarJWT, updateUserProfile);
+router.put('/profile/:id', validarJWT, validarConfirmacion, updateUserProfile);
 
-router.put("/deleteProfile/:id", validarJWT, deleteUserAccount);
+router.delete("/deleteProfile/:id", validarJWT, validarConfirmacion, deleteUserAccount);
 
 router.get(
     "/",

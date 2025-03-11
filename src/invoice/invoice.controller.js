@@ -5,14 +5,12 @@ import Invoice from "./invoice.model.js";
 
 export const getUserInvoices = async (req, res) => {
     try {
-        // Obtenemos todas las facturas del usuario autenticado
         const invoices = await Invoice.find({ user: req.usuario._id }).populate("items.product");
 
         if (!invoices || invoices.length === 0) {
             return res.status(404).json({ message: "No se encontraron facturas para este usuario." });
         }
 
-        // Devolvemos las facturas con los productos detallados
         res.status(200).json({ message: "Facturas encontradas", invoices });
 
     } catch (error) {
@@ -25,19 +23,16 @@ export const getInvoiceDetails = async (req, res) => {
     try {
         const { invoiceId } = req.params;
 
-        // Encontramos la factura especificada por su ID y cargamos los productos
         const invoice = await Invoice.findById(invoiceId).populate("items.product");
 
         if (!invoice) {
             return res.status(404).json({ message: "Factura no encontrada." });
         }
 
-        // Verificamos que el usuario que realiza la solicitud sea el propietario de la factura
         if (invoice.user.toString() !== req.usuario._id.toString()) {
             return res.status(403).json({ message: "No tienes permiso para ver esta factura." });
         }
 
-        // Devolvemos la factura con los productos detallados
         res.status(200).json({ message: "Factura encontrada", invoice });
 
     } catch (error) {
@@ -106,24 +101,26 @@ export const editInvoice = async (req, res) => {
             const product = await Product.findById(existingItem.product._id);
             const newItem = req.body.items ? req.body.items.find(item => item.product.toString() === existingItem.product.toString()) : null;
 
-            if (!newItem) {
-                product.stock += existingItem.quantity;
-            } else {
-                const quantityDifference = newItem.quantity - existingItem.quantity;
+            if (newItem) {
+                const quantityDifference = existingItem.quantity - newItem.quantity;
 
-                if (quantityDifference < 0) {
-                    product.stock += Math.abs(quantityDifference);
-                } else if (quantityDifference > 0) {
-                    if (product.stock < quantityDifference) {
+                if (quantityDifference > 0) {
+                    product.stock += quantityDifference;
+                } else if (quantityDifference < 0) {
+                    const quantityToSubtract = Math.abs(quantityDifference);
+
+                    if (product.stock < quantityToSubtract) {
                         return res.status(400).json({
-                            message: `No hay suficiente stock para el producto: ${product.name}`,
+                            message: `No hay suficiente stock para el producto: ${product.name}. Solo quedan ${product.stock} unidades.`,
                         });
                     }
-                    product.stock -= quantityDifference;
+                    product.stock -= quantityToSubtract;
                 }
+            } else {
+                product.stock += existingItem.quantity;
             }
 
-            await product.save(); 
+            await product.save();
         }
 
         if (req.body.items) {

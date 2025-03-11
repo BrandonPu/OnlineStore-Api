@@ -1,58 +1,148 @@
 [{
   "_id": {
-    "$oid": "67cbc94ab7702190433d0150"
+    "$oid": "67cfbaafec387c0398d377cc"
   },
   "user": {
-    "$oid": "67c928369d41935d98484cfa"
+    "$oid": "67cfb76a3d52da6e5b10cf78"
   },
   "items": [
     {
       "product": {
-        "$oid": "67ca724c7f6e372b38889afe"
+        "$oid": "67cfacc0497591e67c4ebb47"
       },
-      "quantity": -500,
+      "quantity": 24,
       "_id": {
-        "$oid": "67cbd20c4b2260f459857deb"
+        "$oid": "67cfc530351985b16bda3689"
       }
     }
   ],
-  "total": 299.84999999999997,
+  "total": 379.80999999999995,
   "status": "PAID",
   "state": true,
   "createdAt": {
-    "$date": "2025-03-08T04:36:26.516Z"
+    "$date": "2025-03-11T04:23:11.607Z"
   },
   "updatedAt": {
-    "$date": "2025-03-08T05:13:48.280Z"
+    "$date": "2025-03-11T05:08:00.831Z"
   }
 },
 {
   "_id": {
-    "$oid": "67cbcb841d14e39f70126327"
+    "$oid": "67cfcd960749282e3aa3bc7d"
   },
   "user": {
-    "$oid": "67ca42ab542ba2f9e4177729"
+    "$oid": "67cfa2e512dcbdaf9d20657b"
   },
   "items": [
     {
       "product": {
-        "$oid": "67ca72677f6e372b38889b05"
+        "$oid": "67cfacc0497591e67c4ebb47"
       },
-      "quantity": 5,
-      "price": 99.99,
-      "subtotal": 499.95,
+      "quantity": 8,
+      "price": 19.99,
+      "subtotal": 159.92,
       "_id": {
-        "$oid": "67cbcb841d14e39f70126328"
+        "$oid": "67cfcd960749282e3aa3bc7e"
       }
     }
   ],
-  "total": 499.95,
+  "total": 159.92,
   "status": "PAID",
   "state": true,
   "createdAt": {
-    "$date": "2025-03-08T04:45:56.248Z"
+    "$date": "2025-03-11T05:43:50.179Z"
   },
   "updatedAt": {
-    "$date": "2025-03-08T04:45:56.248Z"
+    "$date": "2025-03-11T05:43:50.179Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cfcded08ae443f66a1a309"
+  },
+  "user": {
+    "$oid": "67cfa2e512dcbdaf9d20657b"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "67cfacc0497591e67c4ebb47"
+      },
+      "quantity": 8,
+      "price": 19.99,
+      "subtotal": 159.92,
+      "_id": {
+        "$oid": "67cfcded08ae443f66a1a30a"
+      }
+    }
+  ],
+  "total": 159.92,
+  "status": "PAID",
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-11T05:45:17.125Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-11T05:45:17.125Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cfce7164299efd037856c5"
+  },
+  "user": {
+    "$oid": "67cfa2e512dcbdaf9d20657b"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "67cfacc0497591e67c4ebb47"
+      },
+      "quantity": 1,
+      "price": 19.99,
+      "subtotal": 19.99,
+      "_id": {
+        "$oid": "67cfce7164299efd037856c6"
+      }
+    }
+  ],
+  "total": 19.99,
+  "status": "PAID",
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-11T05:47:29.924Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-11T05:47:29.924Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cfce819065bf8ec78680dc"
+  },
+  "user": {
+    "$oid": "67cfa2e512dcbdaf9d20657b"
+  },
+  "items": [
+    {
+      "product": {
+        "$oid": "67cfacc0497591e67c4ebb47"
+      },
+      "quantity": 1,
+      "price": 19.99,
+      "subtotal": 19.99,
+      "_id": {
+        "$oid": "67cfce819065bf8ec78680dd"
+      }
+    }
+  ],
+  "total": 19.99,
+  "status": "PAID",
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-11T05:47:45.750Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-11T05:47:45.750Z"
   }
 }]

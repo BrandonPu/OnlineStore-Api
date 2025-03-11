@@ -8,8 +8,12 @@ export const addProductToCart = async (req, res) => {
 
     try {
         const product = await Product.findById(productId);
-        if (!product || !product.state || product.stock < quantity) {
+        if (!product || !product.state) {
             return res.status(404).json({ msg: "Producto no disponible" });
+        }
+
+        if (quantity > product.stock) {
+            return res.status(400).json({ msg: `No hay suficiente stock. Solo quedan ${product.stock} unidades` });
         }
 
         let cart = await Cart.findOne({ user: userId, status: { $ne: "COMPLETED" } });
@@ -29,18 +33,19 @@ export const addProductToCart = async (req, res) => {
         const item = cart.items.find(item => item.product.toString() === productId);
 
         if (item) {
-            const newQuantity = item.quantity + quantity;
-            if (newQuantity > product.stock) {
+            if (quantity > product.stock) {
                 return res.status(400).json({ msg: `No puedes agregar más de ${product.stock} unidades` });
             }
-            item.quantity = newQuantity;
+            item.quantity += quantity;
         } else {
             cart.items.push({ product: productId, quantity, price: product.price });
         }
 
         product.stock -= quantity;
+        product.sold += quantity; 
+
         if (product.stock === 0) {
-            product.state = false; 
+            product.state = false;
         }
 
         await product.save();

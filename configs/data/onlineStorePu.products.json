@@ -1,60 +1,120 @@
 [{
   "_id": {
-    "$oid": "67ca724c7f6e372b38889afe"
+    "$oid": "67cfacc0497591e67c4ebb47"
   },
-  "name": "Hojas",
-  "description": "Este es un producto de Hojas para la prueba.",
+  "name": "Pants",
+  "description": "Este es un producto de Pants para la prueba.",
   "price": 19.99,
-  "stock": 20,
+  "stock": 70,
   "category": {
-    "$oid": "67ca5b0c2ff3a88f387e6b7e"
+    "$oid": "67cfa1e912dcbdaf9d206577"
   },
-  "sold": 0,
+  "sold": 18,
   "state": true,
   "createdAt": {
-    "$date": "2025-03-07T04:13:00.507Z"
+    "$date": "2025-03-11T03:23:44.170Z"
   },
   "updatedAt": {
-    "$date": "2025-03-08T05:13:48.276Z"
+    "$date": "2025-03-11T05:47:13.896Z"
   }
 },
 {
   "_id": {
-    "$oid": "67ca72677f6e372b38889b05"
+    "$oid": "67cfae3f497591e67c4ebb66"
   },
-  "name": "Carton",
-  "description": "Este es un producto de Carton para la prueba.",
-  "price": 99.99,
-  "stock": 15,
+  "name": "Camiseta",
+  "description": "Camiseta de algodón 100% para uso diario.",
+  "price": 19.99,
+  "stock": 200,
   "category": {
-    "$oid": "67ca5b0c2ff3a88f387e6b7e"
+    "$oid": "67cfa1e912dcbdaf9d206577"
   },
-  "sold": 120,
+  "sold": 1,
   "state": true,
   "createdAt": {
-    "$date": "2025-03-07T04:13:27.278Z"
+    "$date": "2025-03-11T03:30:07.048Z"
   },
   "updatedAt": {
-    "$date": "2025-03-08T05:26:29.449Z"
+    "$date": "2025-03-11T03:36:36.351Z"
   }
 },
 {
   "_id": {
-    "$oid": "67ca727e7f6e372b38889b0a"
+    "$oid": "67cfae78497591e67c4ebb6f"
   },
-  "name": "Hojas",
-  "description": "Este es un producto de Hojas para la prueba.",
-  "price": 19.99,
-  "stock": 20,
+  "name": "Pantalones",
+  "description": "Pantalones de mezclilla cómodos y duraderos.",
+  "price": 49.99,
+  "stock": 150,
   "category": {
-    "$oid": "67ca4c23f3a3e86025333633"
+    "$oid": "67cfa1e912dcbdaf9d206577"
   },
-  "sold": 80,
+  "sold": 2,
   "state": true,
   "createdAt": {
-    "$date": "2025-03-07T04:13:50.070Z"
+    "$date": "2025-03-11T03:31:04.978Z"
   },
   "updatedAt": {
-    "$date": "2025-03-08T02:37:48.954Z"
+    "$date": "2025-03-11T03:36:36.351Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cfae7d497591e67c4ebb74"
+  },
+  "name": "Chaqueta",
+  "description": "Chaqueta impermeable ideal para climas lluviosos.",
+  "price": 79.99,
+  "stock": 75,
+  "category": {
+    "$oid": "67cfa1e912dcbdaf9d206577"
+  },
+  "sold": 3,
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-11T03:31:09.371Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-11T03:36:36.351Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cfae81497591e67c4ebb79"
+  },
+  "name": "Zapatos Deportivos",
+  "description": "Zapatos deportivos ligeros y cómodos para correr.",
+  "price": 59.99,
+  "stock": 120,
+  "category": {
+    "$oid": "67cfa1e912dcbdaf9d206577"
+  },
+  "sold": 4,
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-11T03:31:13.390Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-11T03:36:36.351Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cfae85497591e67c4ebb7e"
+  },
+  "name": "Gorra",
+  "description": "Gorra ajustable con diseño moderno.",
+  "price": 14.99,
+  "stock": 300,
+  "category": {
+    "$oid": "67cfa1e912dcbdaf9d206577"
+  },
+  "sold": 5,
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-11T03:31:17.766Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-11T03:36:36.351Z"
   }
 }]

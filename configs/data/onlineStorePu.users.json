@@ -1,100 +1,120 @@
 [{
   "_id": {
-    "$oid": "67c928369d41935d98484cfa"
-  },
-  "name": "Nuevo nombre",
-  "surname": "Nuevo apellido",
-  "username": "brandonPu",
-  "email": "brandonPu@gmail.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$CQDwvM08ZFPgoucwktUg4Q$spxQBBAAOXZvLGw918jMbMsvJix3xtUfjNp/gYNqV3M",
-  "role": "CLIENT_ROLE",
-  "cart": [
-    {
-      "$oid": "67cbb67cffa10597f3653891"
-    },
-    {
-      "$oid": "67cbd41aa4934e8376603171"
-    },
-    {
-      "$oid": "67cbd4d06c3cce9b2ef3b62c"
-    },
-    {
-      "$oid": "67cbd500b4889e1e7eb80e0b"
-    },
-    {
-      "$oid": "67cbd50512372aa82a25ca87"
-    }
-  ],
-  "purchaseHistory": [],
-  "invoices": [
-    {
-      "$oid": "67cbc94ab7702190433d0150"
-    }
-  ],
-  "state": false,
-  "createdAt": {
-    "$date": "2025-03-06T04:44:38.856Z"
-  },
-  "updatedAt": {
-    "$date": "2025-03-08T05:39:31.706Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67c92bd1f00623380ec08082"
+    "$oid": "67cfa1e912dcbdaf9d206574"
   },
   "name": "Admin",
   "surname": "System",
   "username": "AdminSystem",
   "email": "admin@system.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$pXZCaa+3PV6fPXcuxeySHg$KGEnTC6tjZUsUfyHEFxIDH8icnnvxYRXceaBfAi79Mw",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$1UZkUo167dDsmPQrL5ZfNw$6uCgoBm1CpxkdcQdzGWcv7Vro/owhNlU1WvqyzgC+7w",
   "role": "ADMIN_ROLE",
   "cart": [],
   "purchaseHistory": [],
   "invoices": [],
   "state": true,
   "createdAt": {
-    "$date": "2025-03-06T05:00:01.941Z"
+    "$date": "2025-03-11T02:37:29.983Z"
   },
   "updatedAt": {
-    "$date": "2025-03-06T05:00:01.941Z"
+    "$date": "2025-03-11T02:37:29.983Z"
   }
 },
 {
   "_id": {
-    "$oid": "67ca42ab542ba2f9e4177729"
+    "$oid": "67cfa2e512dcbdaf9d20657b"
   },
-  "name": "Marlon",
-  "surname": "Casia",
-  "username": "mcasia",
-  "email": "prueba@gmail.com",
-  "password": "$argon2id$v=19$m=65536,t=3,p=4$ozNvWRZHjZpLZQRBMznaXQ$7XsbXSbdPZFwHW3Y1kU518+VLGv9QF1fiaNy9VkcJM8",
+  "name": "Brandon",
+  "surname": "Pu",
+  "username": "brandonPu",
+  "email": "brandonPu@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$KQX8+nMG2TKEOrDlzR3wvg$/H1AqJNGJVXUG6ovs8uJh1/4If3OSR7mvJ8AEl//Zqg",
   "role": "CLIENT_ROLE",
   "cart": [
     {
-      "$oid": "67cbb93b98b7a2cc6ab4add2"
+      "$oid": "67cfb1c1497591e67c4ebbb5"
     },
     {
-      "$oid": "67cbd3e5a4934e837660315c"
+      "$oid": "67cfce6164299efd037856bb"
+    }
+  ],
+  "purchaseHistory": [
+    {
+      "$oid": "67cfcd960749282e3aa3bc7d"
+    }
+  ],
+  "invoices": [
+    {
+      "$oid": "67cfcded08ae443f66a1a309"
     },
     {
-      "$oid": "67cbd3fca4934e8376603166"
+      "$oid": "67cfce819065bf8ec78680dc"
+    }
+  ],
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-11T02:41:41.236Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-11T05:47:45.754Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cfa860a8844458012b768c"
+  },
+  "name": "Marlon",
+  "surname": "Garcia",
+  "username": "mgarcia",
+  "email": "mgarcia@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$x3Dia9jA0CcLhxrhwmhgug$onzjkoexYtN360bB+4euAb/7jDjGp7lActRQDGwZGik",
+  "role": "CLIENT_ROLE",
+  "cart": [
+    {
+      "$oid": "67cfb25bcd5e81d6423c1e6f"
+    },
+    {
+      "$oid": "67cfb6ca3d52da6e5b10cf4e"
+    }
+  ],
+  "purchaseHistory": [],
+  "invoices": [],
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-11T03:05:04.374Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-11T04:06:34.732Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cfb76a3d52da6e5b10cf78"
+  },
+  "name": "Luis",
+  "surname": "Pichiya",
+  "username": "lpichiya",
+  "email": "lpichiya2007@gmail.com",
+  "password": "$argon2id$v=19$m=65536,t=3,p=4$FXuGgEF+5qC88f+7D34q/g$cVBAAlgxcf8ykiPNqFPA2MpPoFlJ6HD985cDyAEb3Tk",
+  "role": "CLIENT_ROLE",
+  "cart": [
+    {
+      "$oid": "67cfb7d53d52da6e5b10cf85"
+    },
+    {
+      "$oid": "67cfbe6eec387c0398d377db"
     }
   ],
   "purchaseHistory": [],
   "invoices": [
     {
-      "$oid": "67cbca81c54a38f5b0f14ccc"
-    },
-    {
-      "$oid": "67cbcb841d14e39f70126327"
+      "$oid": "67cfbaafec387c0398d377cc"
     }
   ],
-  "state": true,
+  "state": false,
   "createdAt": {
-    "$date": "2025-03-07T00:49:47.451Z"
+    "$date": "2025-03-11T04:09:14.784Z"
   },
   "updatedAt": {
-    "$date": "2025-03-08T05:22:04.575Z"
+    "$date": "2025-03-11T05:34:34.485Z"
   }
 }]

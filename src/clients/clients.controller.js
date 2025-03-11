@@ -152,6 +152,7 @@ export const getCategories = async (req, res) => {
         });
     }
 };
+
 export const getProductsByCategoryName = async (req, res) => {
     const { categoryName } = req.params; 
 

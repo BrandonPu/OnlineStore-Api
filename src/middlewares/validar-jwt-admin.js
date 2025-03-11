@@ -30,7 +30,7 @@ export const validarJWTADMIN = async (req, res, next) => {
 
         if (usuario.role !== "ADMIN_ROLE") {
             return res.status(403).json({
-                msg: "No tiene permisos para realizar esta acción solo el token del ADMIN puede realizar esta acción"
+                msg: "No tiene permisos para realizar esta acción solo el ADMIN puede realizar esta acción"
             });
         }
 

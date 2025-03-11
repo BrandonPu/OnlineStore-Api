@@ -1,42 +1,28 @@
 [{
   "_id": {
-    "$oid": "67ca4c23f3a3e86025333633"
-  },
-  "name": "Alimentos",
-  "description": "",
-  "state": true,
-  "createdAt": {
-    "$date": "2025-03-07T01:30:11.684Z"
-  },
-  "updatedAt": {
-    "$date": "2025-03-07T13:39:40.819Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67ca4f0d3acd8b9e950ae10e"
-  },
-  "name": "Nueva Categoría",
-  "description": "Descripción actualizada de la categoría.",
-  "state": true,
-  "createdAt": {
-    "$date": "2025-03-07T01:42:37.482Z"
-  },
-  "updatedAt": {
-    "$date": "2025-03-07T01:44:42.317Z"
-  }
-},
-{
-  "_id": {
-    "$oid": "67ca5b0c2ff3a88f387e6b7e"
+    "$oid": "67cfa1e912dcbdaf9d206577"
   },
   "name": "General",
   "description": "Categoría general para los Productos",
   "state": true,
   "createdAt": {
-    "$date": "2025-03-07T02:33:48.407Z"
+    "$date": "2025-03-11T02:37:29.989Z"
   },
   "updatedAt": {
-    "$date": "2025-03-07T02:33:48.407Z"
+    "$date": "2025-03-11T02:37:29.989Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "67cfab0f497591e67c4ebb2c"
+  },
+  "name": "Deportes",
+  "description": "Para todos lo deportes en general",
+  "state": true,
+  "createdAt": {
+    "$date": "2025-03-11T03:16:31.991Z"
+  },
+  "updatedAt": {
+    "$date": "2025-03-11T03:36:36.354Z"
   }
 }]

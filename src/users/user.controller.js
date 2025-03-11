@@ -25,7 +25,7 @@ export const createUser = async (req = request, res = response) => {
     const data = req.body;
 
     try {
-        
+
         const existingUser = await User.findOne({
             $or: [{ username: data.username }, { email: data.email }]
         });
@@ -35,8 +35,8 @@ export const createUser = async (req = request, res = response) => {
                 message: 'El correo o nombre de usuario ya están registrados. Por favor, ingrese otro diferente.'
             });
         }
-        
-        const encryptedPassword = await hash (data.password);
+
+        const encryptedPassword = await hash(data.password);
 
         const user = await User.create({
             name: data.name,
@@ -70,14 +70,14 @@ export const createUser = async (req = request, res = response) => {
             success: false,
             msg: "Error al Crear el usuario",
             error: error.message
-        }); 
+        });
     }
 }
 
 export const updateUser = async (req, res) => {
     try {
         const { id } = req.params;
-        const { _id, email, password, role, ...data } = req.body;
+        const { _id, email, password, role, state, ...data } = req.body;
 
         if (email || password) {
             return res.status(400).json({
@@ -104,6 +104,7 @@ export const updateUser = async (req, res) => {
         Object.assign(user, data);
 
         if (role) user.role = role;
+        if (typeof state !== 'undefined') user.state = state;
 
         await user.save();
 
@@ -124,7 +125,7 @@ export const updateUser = async (req, res) => {
 
 export const deleteUser = async (req, res) => {
     try {
-        
+
         const { id } = req.params;
 
         const user = await User.findByIdAndUpdate(id, { state: false }, { new: true });
@@ -144,25 +145,18 @@ export const deleteUser = async (req, res) => {
             msg: "Error al Desactivar Usuario",
             error
         })
-    }   
+    }
 }
 
 export const updateUserProfile = async (req, res) => {
     try {
         const { id } = req.params;
-        const { _id, email, password, role, ...data } = req.body;
+        const { _id, email, oldEmail, newEmail, password, oldPassword, newPassword, role, ...data } = req.body;
 
         if (req.usuario._id.toString() !== id) {
             return res.status(403).json({
                 success: false,
                 msg: "No tienes permiso para actualizar este perfil."
-            });
-        }
-
-        if (email || password) {
-            return res.status(400).json({
-                success: false,
-                msg: "No puedes actualizar el email o la contraseña desde esta ruta."
             });
         }
 
@@ -172,6 +166,58 @@ export const updateUserProfile = async (req, res) => {
                 success: false,
                 msg: "Usuario no encontrado"
             });
+        }
+
+        if (password || oldPassword || newPassword) {
+            if (!oldPassword || !newPassword) {
+                return res.status(400).json({
+                    success: false,
+                    msg: "Debes proporcionar la contraseña antigua y la nueva."
+                });
+            }
+
+            const isMatch = await verify(user.password, oldPassword);
+            if (!isMatch) {
+                return res.status(400).json({
+                    success: false,
+                    msg: "La contraseña antigua es incorrecta."
+                });
+            }
+
+            if (oldPassword === newPassword) {
+                return res.status(400).json({
+                    success: false,
+                    msg: "La nueva contraseña no puede ser igual a la antigua."
+                });
+            }
+
+            user.password = await hash(newPassword);
+        }
+
+        if (oldEmail || newEmail) {
+            if (!oldEmail || !newEmail) {
+                return res.status(400).json({
+                    success: false,
+                    msg: "Debes proporcionar el correo electrónico antiguo y el nuevo."
+                });
+            }
+
+            if (user.email !== oldEmail) {
+                return res.status(400).json({
+                    success: false,
+                    msg: "El correo electrónico antiguo no es correcto."
+                });
+            }
+
+            const emailExist = await User.findOne({ email: newEmail });
+            if (emailExist) {
+                return res.status(400).json({
+                    success: false,
+                    msg: "El nuevo correo electrónico ya está registrado."
+                });
+            }
+
+            user.email = newEmail;
         }
 
         if (role && role !== user.role) {
@@ -200,13 +246,17 @@ export const updateUserProfile = async (req, res) => {
     }
 };
 
+
 export const deleteUserAccount = async (req, res) => {
-    const { _id: userId } = req.usuario;  
+    const { id } = req.params;
+    
+    const { _id: userId } = req.usuario;
     try {
-        if (userId !== req.params.id) {
+
+        if (req.usuario._id.toString() !== id) {
             return res.status(403).json({
                 success: false,
-                msg: "No tienes permiso para eliminar esta cuenta."
+                msg: "No tienes permiso para actualizar este perfil."
             });
         }
 
